@@ -1,25 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Table with database</title>
+
+<title>Student Details</title>
+
 <style>
-table {
-border-collapse: collapse;
-width: 100%;
-color: #588c7e;
-font-family: monospace;
-font-size: 25px;
-text-align: left;
+
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
 }
-th {
-background-color: #588c7e;
-color: white;
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+th, td {
+border: 3px solid black;
+background-color: #868de9;
+color: black;
 }
 tr:nth-child(even) {background-color: #f2f2f2}
 </style>
+
 </head>
+
 <body>
-<table>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="navbar">
+  <a class="active" href="http://localhost/project/login/view.html"><i class="fa fa-fw fa-home"></i> Home</a>
+  <a href="http://localhost/project/login/login.html"><i class="fa fa-fw fa-user"></i> Logout</a>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<table style="border-collapse:seperate;width: 50%;color: #588c7e;font-family: monospace;font-size: 20px;text-align: center;">
 <tr>
 <th>Seat No</th>
 <th>First Name </th>
@@ -60,11 +99,3 @@ $conn->close();
 </table>
 </body>
 </html>
-
-
-
-
-
-
-
-
