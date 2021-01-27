@@ -23,23 +23,30 @@ $con=new mysqli("localhost","root","","register");
 
 
 
-if(!empty($firstname) || !empty($lastname) || !empty($housename) || !empty($locality) || !empty($district) || !empty($pincode) || !empty($branch) || !empty($year) || !empty($registrationno) || !empty($pickuppoint) || !empty($droppoint) || !empty($busroute) || !empty($phoneno) || !empty($fees))
+if(!empty($firstname) && !empty($lastname) && !empty($housename) && !empty($locality) && !empty($district) && !empty($pincode) && !empty($branch) && !empty($year) && !empty($registrationno) && !empty($pickuppoint) && !empty($droppoint) && !empty($busroute) && !empty($phoneno) && !empty($fees))
 {
      $sql="insert into student(firstname,lastname,housename,locality,district,pincode,branch,year,registrationno,pickuppoint,droppoint,busroute,phoneno,fees) values('$firstname','$lastname','$housename','$locality','$district','$pincode','$branch','$year','$registrationno','$pickuppoint','$droppoint','$busroute','$phoneno','$fees')";
      if($con->query($sql)==TRUE)
     {
-       echo "Your account has been created";
+       echo '<script>alert("Your Data Has Been Created Successfully");
+       window.location.href="registration.html";
+       </script>';
 
     } 
     else
     {
-       echo " ".$con->error;
+      echo " ".$con->error;
     }
 
 }
 else
 {
-    echo "Please enter all the required fields";
+  
+   echo '<script>
+   alert("Please enter all fields")
+   window.location.href="registration.html";
+   </script>';
+
 }
 
 
